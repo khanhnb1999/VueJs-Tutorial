@@ -1,35 +1,31 @@
 <script>
-   export default {
-      data() {
-         return {
-            content: "Hello, see you again!!!",
-            isDisable: true,
-            number: 1,
-            users: [
-               {id:1,name: 'khanh'},
-               {id:2,name: 'Nam'},
-               {id:3,name: 'Trung'},
-               {id:4,name: 'Thanh'}
-            ]
-         }
-      },
-      methods: {
-         changeText() {
-            this.number++
-         }
+export default {
+   data() {
+      return {
+         subjects: [
+            {id:1, subject: 'Javascript'},
+            {id:2, subject: 'VueJS'},
+            {id:3, subject: 'ReactJs'},
+            {id:4, subject: 'HTML'}
+         ],
       }
    }
+}
 </script>
 
 <template>
-   <div>
-      <h2>{{ isDisable ? content : 'Content is false' }}</h2>
-      <h1 class="title__learn" :class="{content : isDisable, header__title : isDisable}">Learn more about</h1>
-      <h1>{{ number }}</h1>
-      <button @click="changeText">Click me!!!</button>
-   </div>
+   <ul>
+      <li 
+         v-for="subject in subjects" 
+         :key="subject.id"
+      >
+         {{ subject.subject }}
+      </li>
+   </ul>
 </template>
 
 <style scoped>
-
+.text-danger {
+   color: green;
+}
 </style>

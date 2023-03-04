@@ -4,7 +4,7 @@
 </script>
 
 <template>
-   <HelloWorld msg="khanhnb" />
+   <HelloWorld />
    <MyComponent />
 </template>
 
